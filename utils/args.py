@@ -4,7 +4,9 @@
 # LICENSE file in the root directory of this source tree.
 
 from argparse import ArgumentParser
-from datasets import NAMES as DATASET_NAMES
+# from datasets import NAMES as DATASET_NAMES
+from huggingface_hub import list_datasets
+DATASET_NAMES = list_datasets()
 from models import get_all_models
 
 
