@@ -204,8 +204,8 @@ import numpy as np
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset
 from backbone.ResNet18_MAML1 import resnet18_maml
-# from backbone.ResNet18_OBC import resnet18
-from backbone.ResNet18_obc import resnet18
+from backbone.ResNet18_OBC import resnet18
+# from backbone.ResNet18_obc import resnet18
 from backbone.pc_cnn import PC_CNN
 import torch.nn.functional as F
 from utils.conf import base_path
