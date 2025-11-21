@@ -21,14 +21,12 @@ if mammoth_path not in sys.path:
 
 # from datasets import NAMES as DATASET_NAMES
 # from datasets import list_datasets
-from huggingface_hub import list_datasets
-DATASET_NAMES = list_datasets()
 from models import get_all_models
 from argparse import ArgumentParser
 from utils.args import add_management_args
-from datasets import ContinualDataset
+from datasets import ContinualDataset, get_dataset, NAMES as DATASET_NAMES
 from utils.continual_training import train as ctrain
-from datasets import get_dataset
+
 from models import get_model
 from utils.training import train#, evaluate0
 from utils.best_args import best_args
@@ -99,6 +97,7 @@ def main(args=None):
         args = parse_args()
     # wandb.init(project = 'Cifar10-resnet', name=args.model+'w_mask')
     # wandb.init(project = 'Cifar10-mask', name=args.model)
+    print(args)
     dataset = get_dataset(args)
 
     backbone = dataset.get_backbone() # 在 datasets.perm_mnist.py
