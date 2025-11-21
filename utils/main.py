@@ -10,7 +10,7 @@ import sys
 import socket
 mammoth_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(mammoth_path)
-sys.path.append(mammoth_path + '/datasets')
+# sys.path.append(mammoth_path + '/datasets')
 sys.path.append(mammoth_path + '/backbone')
 sys.path.append(mammoth_path + '/models')
 
