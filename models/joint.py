@@ -6,8 +6,8 @@
 from torch.optim import SGD
 
 from utils.args import *
-from models.utils.continual_model import ContinualModel
-from Pareto_CL_ICML24.datasets.utils.validation import ValidationDataset
+from ..models.utils.continual_model import ContinualModel
+from ..datasets.utils.validation import ValidationDataset
 from utils.status import progress_bar
 import torch
 import numpy as np
