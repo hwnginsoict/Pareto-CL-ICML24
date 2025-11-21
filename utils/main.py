@@ -8,11 +8,22 @@ import importlib
 import os
 import sys
 import socket
-mammoth_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(mammoth_path)
+# mammoth_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# sys.path.append(mammoth_path)
 # sys.path.append(mammoth_path + '/datasets')
-sys.path.append(mammoth_path + '/backbone')
-sys.path.append(mammoth_path + '/models')
+# sys.path.append(mammoth_path + '/backbone')
+# sys.path.append(mammoth_path + '/models')
+
+mammoth_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+for p in [
+    mammoth_path,
+    os.path.join(mammoth_path, 'datasets'),
+    os.path.join(mammoth_path, 'backbone'),
+    os.path.join(mammoth_path, 'models'),
+]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 # from datasets import NAMES as DATASET_NAMES
 # from datasets import list_datasets
