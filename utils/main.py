@@ -15,7 +15,8 @@ sys.path.append(mammoth_path + '/backbone')
 sys.path.append(mammoth_path + '/models')
 
 # from datasets import NAMES as DATASET_NAMES
-from datasets import list_datasets
+# from datasets import list_datasets
+from huggingface_hub import list_datasets
 DATASET_NAMES = list_datasets()
 from models import get_all_models
 from argparse import ArgumentParser
