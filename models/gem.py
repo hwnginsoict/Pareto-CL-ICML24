@@ -6,7 +6,7 @@
 
 import numpy as np
 import torch
-# from utils.conf import warn_once
+from utils.conf import warn_once
 
 from models.utils.continual_model import ContinualModel
 from utils.args import add_rehearsal_args, ArgumentParser
@@ -101,8 +101,7 @@ class Gem(ContinualModel):
         try:
             import quadprog as solver
         except ImportError:
-            # warn_once
-            print("`quadprog` not found, trying with `qpsolvers`. Note that the code is only tested with `quadprog`.")
+            warn_once("`quadprog` not found, trying with `qpsolvers`. Note that the code is only tested with `quadprog`.")
             try:
                 import qpsolvers as solver
                 raise Exception('QPSolvers is just a suggestion but does not work at the moment. To make it work, you need to set it up properly (and remove this exception).')

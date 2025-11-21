@@ -7,6 +7,20 @@ import random
 import torch
 import numpy as np
 
+def warn_once(*msg):
+    """
+    Prints a warning message only once.
+
+    Args:
+        msg: the message to be printed
+    """
+    msg = ' '.join([str(m) for m in msg])
+    if not hasattr(warn_once, 'warned'):
+        warn_once.warned = set() # type: ignore[unresolved-attribute]
+    if msg not in warn_once.warned: # type: ignore[unresolved-attribute]
+        warn_once.warned.add(msg) # type: ignore[unresolved-attribute]
+        logging.warning(msg)
+
 def get_device() -> torch.device:
     """
     Returns the GPU device if available else CPU.
